@@ -19,15 +19,6 @@ export default function Header({ onReset, showAudioPlayer }: HeaderProps) {
     >
       <div className="grid grid-cols-3 items-center px-4 pt-4">
         <div className="flex items-center gap-4">
-          {showAudioPlayer && (
-            <div className="md:hidden">
-              <AudioPlayer
-                url="https://yzqspsfjsojhidxp.public.blob.vercel-storage.com/French%20Waltz-emlpCjIEZEtmTYdcp69jjl7avV7sAO.wav"
-                initiallyPlaying={true}
-                data-background-music="true"
-              />
-            </div>
-          )}
           <div className="hidden md:block">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brand%20logo@4x-8-NJfFEtDOE5RZsXqb1xGXEm2hyYeFil.png"

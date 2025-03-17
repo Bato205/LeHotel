@@ -47,7 +47,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({
           setAutoplayPrevented(true)
         })
       }
-      audio.volume = 0.2 // Set a default volume
+      audio.volume = 0.1 // Set back to original volume
       audio.loop = true // Ensure the audio loops
     }
   }, [initiallyPlaying, isMuted])

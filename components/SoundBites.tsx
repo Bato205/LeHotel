@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { useAudio } from "../contexts/AudioContext"
 
 interface SoundBitesProps {
   isVideoPlaying: boolean
@@ -16,6 +17,8 @@ const soundBites = [
 ]
 
 const SoundBites: React.FC<SoundBitesProps> = ({ isVideoPlaying }) => {
+  const { isMuted } = useAudio()
+
   useEffect(() => {
     let intervalId: NodeJS.Timeout | null = null
     let currentAudio: HTMLAudioElement | null = null
@@ -25,7 +28,7 @@ const SoundBites: React.FC<SoundBitesProps> = ({ isVideoPlaying }) => {
         currentAudio.pause()
         currentAudio.currentTime = 0
       }
-      if (!isVideoPlaying) {
+      if (!isVideoPlaying && !isMuted) {
         const randomIndex = Math.floor(Math.random() * soundBites.length)
         currentAudio = new Audio(soundBites[randomIndex])
         currentAudio.play()
@@ -46,7 +49,7 @@ const SoundBites: React.FC<SoundBitesProps> = ({ isVideoPlaying }) => {
         currentAudio.currentTime = 0
       }
     }
-  }, [isVideoPlaying])
+  }, [isVideoPlaying, isMuted])
 
   return null // This component doesn't render anything visually
 }

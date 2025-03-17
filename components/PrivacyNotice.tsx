@@ -27,7 +27,7 @@ export default function PrivacyNotice({ onClose }: PrivacyNoticeProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
-          className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6 z-50"
+          className="pointer-events-none fixed inset-x-0 bottom-[80px] px-6 pb-6 z-50"
         >
           <div className="pointer-events-auto mx-auto max-w-[calc(36rem+200px)] rounded-xl bg-white/80 backdrop-blur-sm p-6 shadow-lg ring-1 ring-gray-900/10">
             <p className="text-sm/6 text-gray-900 mb-4">
